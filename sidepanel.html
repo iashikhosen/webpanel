@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebPanel</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+    <link rel="stylesheet" href="tooltip.css" />
+    <link rel="stylesheet" href="permissions.css" />
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <main class="panel-shell">
+      <section class="tab-strip-wrap">
+        <button id="tabScrollPrev" class="tab-scroll" type="button" aria-label="Previous tabs" title="Previous tabs">‹</button>
+        <div class="tab-strip" id="tabStrip" role="tablist"></div>
+        <button id="addTab" class="add-tab" title="Add a new panel tab" aria-label="Add a new panel tab">+</button>
+        <button id="tabScrollNext" class="tab-scroll" type="button" aria-label="Next tabs" title="Next tabs">›</button>
+      </section>
+      <form id="addressForm" class="address-bar">
+        <button id="homeBtn" type="button" class="home-button" title="Open home page">⌂</button>
+        <input id="addressInput" autocomplete="off" spellcheck="false" aria-label="Website address or search" placeholder="Search or enter a URL" />
+        <button class="go-button" type="submit" aria-label="Go">→</button>
+      </form>
+      <div class="browser-frame">
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">✦</div><h1>Your workspace, one panel away.</h1><p>Add a tab to keep any website within reach.</p>
+          <button id="emptyAdd" class="primary-button">Add your first tab</button>
+        </div>
+        <div id="frameStack" class="frame-stack" aria-label="WebPanel pages"></div>
+      </div>
+    </main>
+    <dialog id="tabDialog" class="dialog"><form id="tabForm" method="dialog">
+      <div class="dialog-heading"><h2 id="dialogTitle">New tab</h2><button type="button" class="text-close" data-close>×</button></div>
+      <label>Tab name<input id="tabName" maxlength="48" required placeholder="e.g. Project dashboard" /></label>
+      <label>Website address<input id="tabUrl" required placeholder="https://example.com" /></label>
+      <label class="check-row"><input id="tabPinned" type="checkbox" /> Pin this tab</label>
+      <div class="dialog-actions"><button type="button" class="secondary-button" data-close>Cancel</button><button class="primary-button" value="default">Save tab</button></div>
+    </form></dialog>
+    <div id="menuDismissLayer" class="menu-dismiss-layer" aria-hidden="true"></div>
+    <div id="contextMenu" class="context-menu" role="menu"><button data-action="refresh">Refresh page</button><hr /><button data-action="edit">Edit tab</button><button data-action="duplicate">Duplicate tab</button><hr /><button data-action="pin">Pin selected</button><button data-action="unpin">Unpin selected</button><hr /><button data-action="remove" class="danger">Remove selected</button></div>
+    <div id="tabTooltip" class="tab-tooltip" role="tooltip"><strong></strong><span class="tooltip-state"></span><span class="tooltip-url"></span></div>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
