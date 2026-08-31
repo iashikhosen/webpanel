@@ -26,3 +26,4 @@ WebPanel does not inject code into websites or bypass website security headers. 
 - Explain the `tabs`, `storage`, `sidePanel`, and `contextMenus` permissions in the listing or support page.
 - Add at least one real screenshot, a support email, and a concise description of the optional future-update form.
 - Create the upload ZIP from the extension source files only; exclude `.DS_Store` and Chrome-generated `_metadata/` files.
+# webpanel
